@@ -19,7 +19,7 @@ export default function SignupPage() {
     setSuccess("");
     try {
       setLoading(true);
-      await api.post("/auth/signup", { username, password });
+      await api.post("/signup", { username, password });
       setSuccess("Signup successful! Redirecting to login...");
       toast.success("Signup successful! Redirecting...");
       setTimeout(() => navigate("/login"), 1500);

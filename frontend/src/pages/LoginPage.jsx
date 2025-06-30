@@ -16,7 +16,7 @@ export default function LoginPage() {
     setError("");
     try {
       setLoading(true);
-      const res = await api.post("/auth/login", { username, password });
+      const res = await api.post("/login", { username, password });
       localStorage.setItem("token", res.data.token);
       toast.success("Login successful! Redirecting...");
       navigate("/dashboard");
