@@ -14,9 +14,9 @@ export default function FlightTable({ flights }) {
             <th className="p-3 text-left">Location</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody  className="">
           {flights.map(f => (
-            <tr key={f._id} className="border-t border-white/30">
+            <tr key={f._id || `${f.startTime}-${f.pilotName}-${f.location}`}>
               <td className="p-3">{new Date(f.startTime).toLocaleString()}</td>
               <td className="p-3">{f.duration}</td>
               <td className="p-3">{f.pilotName}</td>

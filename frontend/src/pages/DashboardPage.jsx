@@ -23,6 +23,7 @@ export default function DashboardPage() {
 
   function logout() {
     localStorage.removeItem("token");
+    toast.success("Logout successful!");
     navigate("/login");
   }
 
