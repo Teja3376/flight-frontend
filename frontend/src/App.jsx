@@ -9,9 +9,15 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={isLoggedIn ? <Navigate to="/" /> : <LoginPage />} />
-        <Route path="/signup" element={isLoggedIn ? <Navigate to="/" /> : <SignupPage />} />
-        <Route path="/" element={isLoggedIn ? <DashboardPage /> : <Navigate to="/login" />} />
+        {/* Login page at /login */}
+        <Route path="/login" element={isLoggedIn ? <Navigate to="/dashboard" /> : <LoginPage />} />
+        {/* Signup page at /signup */}
+        <Route path="/signup" element={isLoggedIn ? <Navigate to="/dashboard" /> : <SignupPage />} />
+        {/* Dashboard page at /dashboard */}
+        <Route path="/dashboard" element={isLoggedIn ? <DashboardPage /> : <Navigate to="/login" />} />
+        {/* Default: redirect root to login or dashboard */}
+        <Route path="/" element={<Navigate to={isLoggedIn ? "/dashboard" : "/login"} />} />
+        {/* Catch-all: redirect to root */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
