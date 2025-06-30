@@ -59,7 +59,7 @@ export default function AddFlightForm({ onAdd, loading }) {
         />
       </div>
       <button
-        className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+        className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 cursor-pointer"
         type="submit"
         disabled={loading}
       >
