@@ -3,7 +3,7 @@ import axios from "axios";
 const api = axios.create({
   // baseURL: "https://flight-backend-production.up.railway.app/api",
   // baseURL: "http://localhost:5000/api/",
-  baseURL: "https://flight-backend-production.up.railway.app/api",
+  baseURL: "https://flight-backend-36uz.onrender.com/api",
 });
 
 api.interceptors.request.use((config) => {
